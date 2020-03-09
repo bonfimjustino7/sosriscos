@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block title %}Fazer Denúnica - S.O.S Riscos{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <div class="card">
+        <div class="card-content">
+            <h5>Fazer Denúnica</h5>
+            <p>Nesta página você poderá fazer uma denúncia sem ser identificado.</p>
+            <div class="row">
+            <form class="col s12" method="POST">
+              <div class="row">
+                <div class="input-field col s12 m12">
+                  <i class="material-icons prefix">location_city</i>
+                  <input id="icon_prefix" type="text" name="lugar" class="validate" required>
+                  <label for="icon_prefix">Nome do lugar</label>
+                </div>
+                <span style="float: left; font-size: 12px; margin-left: 12px;color: #a5a5a5;">Agora nos conte o que aconteceu em poucas palavras.</span>
+                <div class="input-field col s12 m12">
+                  <i class="material-icons prefix">edit</i>
+                  <textarea id="textarea2" class="materialize-textarea" name="descricao" data-length="120" required></textarea>
+                  <label for="textarea2">Descrição</label>
+                </div>
+              </div>
+                 <i class="material-icons prefix small">location_on</i><h5 style="display: inline-block;">Localização</h5>
+                <p>Informe a latitude e longitude do lugar. Não sabe qual é? Clique no botão "Minha localização".</p>
+                <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">explore</i>
+                  <input id="latitude" type="text" name="latitude" required>
+                  <label for="latitude">Latitude</label>
+                </div>
+                <div class="input-field col s6">
+                   <i class="material-icons prefix">explore</i>
+                  <input id="longitude" type="text" name="longitude" required>
+                  <label for="longitude">Longitude</label>
+                </div>
+              </div>
+                <a class="waves-effect waves-light btn-small indigo" id="my-location"><i class="material-icons left">explore</i>Minha localização</a>
+                <div style="margin-top: 60px; float: right">
+                    <a class="btn-flat indigo-text" style="font-size: 15px" href="/"> Cancelar</a>
+                    <button class="btn red lighten-1"  type="submit" name="action">Enviar
+                       <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
+{% block js %}
+    <script>
+        var options = {
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0
+        };
+
+        function success(pos) {
+          var crd = pos.coords;
+
+          console.log('Sua posição atual é:');
+          console.log('Latitude : ' + crd.latitude);
+          console.log('Longitude: ' + crd.longitude);
+          console.log('Mais ou menos ' + crd.accuracy + ' metros.');
+          $('#latitude').val(crd.latitude);
+          $('#longitude').val(crd.longitude);
+        };
+
+        function error(err) {
+          console.warn('ERROR(' + err.code + '): ' + err.message);
+        };
+
+
+        $('#my-location').click(function () {
+            navigator.geolocation.getCurrentPosition(success, error, options);
+        })
+    </script>
+
+{% endblock %}
