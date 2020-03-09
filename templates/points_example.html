@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Pontos de Denúncia - S.O.S Risco</title>
+    <title>Pontos de Denúncia</title>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -15,84 +15,66 @@
         margin: 0;
         padding: 0;
       }
-      #floating-panel {
-        position: absolute;
-        top: 10px;
-        left: 25%;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
-      }
-      #floating-panel {
-        margin-left: -52px;
-      }
+
     </style>
   </head>
-  <body onload="drop()">
+  <body onload="initialize()">
 
     <div id="map"></div>
     <script>
 
-      // If you're adding a number of markers, you may want to drop them on the map
-      // consecutively rather than all at once. This example shows how to use
-      // window.setTimeout() to space your markers' animation.
-        var neighborhoods = [];
-      /*var neighborhoods = [
-        {lat: 52.511, lng: 13.447},
-        {lat: 52.549, lng: 13.422},
-        {lat: 52.497, lng: 13.396},
-        {lat: 52.517, lng: 13.394}
-      ];*/
-      {% for p in points %}
-          neighborhoods.push({ lat: {{ p.latitude }}, lng: {{ p.longitude }} } );
-      {% endfor %}
+         var locations = [];
+         {% for l in points %}
+             locations.push({lat: {{ l.latitude }}, long: {{ l.longitude }}, lugar: '{{ l.lugar }}', descricao: '{{ l.descricao }}'});
+         {% endfor %}
 
-      var markers = [];
-      var map;
+      function initialize() {
 
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
+        var myOptions = {
+          center: new google.maps.LatLng(-7.061508,-41.6552153),
           zoom: 7,
-          center: {lat: -5.4044291, lng: -41.1674462}
-        });
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+
+        };
+        var map = new google.maps.Map(document.getElementById("map"),
+            myOptions);
+
+        setMarkers(map,locations)
+
       }
 
-      function drop() {
-        clearMarkers();
-        for (var i = 0; i < neighborhoods.length; i++) {
-          addMarkerWithTimeout(neighborhoods[i], i * 200);
-        }
-      }
+      function setMarkers(map,locations){
+       var i;
 
-      function addMarkerWithTimeout(position, timeout) {
-        window.setTimeout(function() {
-          markers.push(new google.maps.Marker({
-            position: position,
-            map: map,
-            animation: google.maps.Animation.DROP
-          }));
-        }, timeout);
-      }
+        for (i = 0; i < locations.length; i++) {
+         var loan = locations[i].lugar;
+         var lat = locations[i].lat;
+         var long = locations[i].long
+         var add =  locations[i].descricao;
 
-      function clearMarkers() {
-        for (var i = 0; i < markers.length; i++) {
-          markers[i].setMap(null);
-        }
-        markers = [];
-      }
+         latlngset = new google.maps.LatLng(lat, long);
 
-      var infowindow = new google.maps.InfoWindow({
-          content: contentString,
-          maxWidth: 200
-      });
-      markers.addListener('click', function() {
-          infowindow.open(map, marker);
-      });
+        var marker = new google.maps.Marker({
+              map: map, title: loan , position: latlngset
+            });
+            map.setCenter(marker.getPosition())
+
+            var content = '<h3>'  + loan +  '</h3>' + "Denuncia: " + add
+
+            var infowindow = new google.maps.InfoWindow()
+
+            google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
+                return function() {
+                    infowindow.setContent(content);
+                    infowindow.open(map,marker);
+                };
+            })(marker,content,infowindow));
+
+              }
+            }
+
+
+
     </script>
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfGtRIoQlq_TANe7fXSUyb1PHIGj384GA&callback=initMap"
     async defer></script>

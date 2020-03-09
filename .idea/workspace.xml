@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70e9a906-aa61-4e3e-855a-85afc69235cd" name="Default Changelist" comment="" />
+    <list default="true" id="70e9a906-aa61-4e3e-855a-85afc69235cd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cadastrar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadastrar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/points_example.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/points_example.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +21,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1YdDnrVBIiyip2yi2MLCw7jl7Kw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -24,6 +34,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -75,7 +86,7 @@
       <workItem from="1583320052810" duration="61000" />
       <workItem from="1583365794868" duration="9185000" />
       <workItem from="1583410865089" duration="98000" />
-      <workItem from="1583678504385" duration="16621000" />
+      <workItem from="1583678504385" duration="22226000" />
     </task>
     <servers />
   </component>
@@ -95,22 +106,22 @@
       <screen x="42" y="27" width="1324" height="741" />
     </state>
     <state x="482" y="158" width="424" height="491" key="FileChooserDialogImpl/42.27.1324.741@42.27.1324.741" timestamp="1583320109706" />
-    <state width="1278" height="172" key="GridCell.Tab.0.bottom" timestamp="1583714369445">
+    <state width="1278" height="172" key="GridCell.Tab.0.bottom" timestamp="1583715319073">
       <screen x="42" y="27" width="1324" height="741" />
     </state>
-    <state width="1278" height="172" key="GridCell.Tab.0.bottom/42.27.1324.741@42.27.1324.741" timestamp="1583714369445" />
-    <state width="1278" height="172" key="GridCell.Tab.0.center" timestamp="1583714369445">
+    <state width="1278" height="172" key="GridCell.Tab.0.bottom/42.27.1324.741@42.27.1324.741" timestamp="1583715319073" />
+    <state width="1278" height="172" key="GridCell.Tab.0.center" timestamp="1583715319071">
       <screen x="42" y="27" width="1324" height="741" />
     </state>
-    <state width="1278" height="172" key="GridCell.Tab.0.center/42.27.1324.741@42.27.1324.741" timestamp="1583714369445" />
-    <state width="1278" height="172" key="GridCell.Tab.0.left" timestamp="1583714369444">
+    <state width="1278" height="172" key="GridCell.Tab.0.center/42.27.1324.741@42.27.1324.741" timestamp="1583715319071" />
+    <state width="1278" height="172" key="GridCell.Tab.0.left" timestamp="1583715319069">
       <screen x="42" y="27" width="1324" height="741" />
     </state>
-    <state width="1278" height="172" key="GridCell.Tab.0.left/42.27.1324.741@42.27.1324.741" timestamp="1583714369444" />
-    <state width="1278" height="172" key="GridCell.Tab.0.right" timestamp="1583714369445">
+    <state width="1278" height="172" key="GridCell.Tab.0.left/42.27.1324.741@42.27.1324.741" timestamp="1583715319069" />
+    <state width="1278" height="172" key="GridCell.Tab.0.right" timestamp="1583715319072">
       <screen x="42" y="27" width="1324" height="741" />
     </state>
-    <state width="1278" height="172" key="GridCell.Tab.0.right/42.27.1324.741@42.27.1324.741" timestamp="1583714369445" />
+    <state width="1278" height="172" key="GridCell.Tab.0.right/42.27.1324.741@42.27.1324.741" timestamp="1583715319072" />
     <state width="1278" height="215" key="GridCell.Tab.1.bottom" timestamp="1583711520541">
       <screen x="42" y="27" width="1324" height="741" />
     </state>
